@@ -1,0 +1,26 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="standard:account" size="small"></lightning-icon>
+            Search Account
+        </h3>
+        <p class="slds-p-horizontal_small">
+            <lightning-input
+                name="search"
+                class="slds-m-bottom_small"  
+                label="Search Account Name"
+                onchange={handleKeyChange}
+                type="search"
+                value={accountName}>
+            </lightning-input>
+        </p>
+        <template for:each={accountList} for:item="accObj" for:index="index">
+            <option key={accObj.Id}>{accObj.Name}</option>
+            <option key={accObj.Id}>{accObj.AccountNumber}</option>
+            <option key={accObj.Id}>{accObj.Type}</option>
+            <option key={accObj.Id}>{accObj.AnnualRevenue}</option>
+            <option key={accObj.Id}>{accObj.Industry}</option>
+        </template>
+    </lightning-card>
+    
+</template>
